@@ -4,6 +4,8 @@ const ejsMate = require('ejs-mate');
 const path = require('path');
 const mongoose = require('mongoose');
 const User = require('./model/user')
+const MongoDBStore= require("connect-mongo")(session);
+
 
 
 const dbUrl = "mongodb+srv://admin:grjtcDUO9NbS1uDq@cluster0.88q8xcj.mongodb.net/?retryWrites=true&w=majority"
@@ -30,7 +32,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(session({secret:'notagoodsecret'}))
+const secret = process.env.SECRET || 'thisshouldbebettersecret!';
+const store = new MongoDBStore({
+    url:dbUrl,
+    secret,
+    touchAfter:24*60*60
+})
+
+store.on("error",function(e){
+    console.log('SESSION STORE ERROR', e)
+})
+
+const sessionConfig={
+    store,
+    name:'session',
+    secret,
+    resave:false,
+    saveUninitialized:true,
+    cookie:{
+        httpOnly:true,
+        // secure:true,
+        expires:Date.now()+1000*60*60*24*7,
+        maxAge:1000*60*60*24*7
+    }
+}
+app.use(session(sessionConfig));
+
 
 
 const requireLogin =  (req,res,next)=>{
@@ -39,6 +66,12 @@ const requireLogin =  (req,res,next)=>{
     }
     next();
 }
+
+app.use((req,res,next)=>{
+    res.locals.currentUser= req.session.username;
+    console.log(res.locals.currentUser);
+   next();
+})
 
 
 app.get('/', (req, res) => {
@@ -56,6 +89,7 @@ app.post("/login", async(req, res) => {
     const foundUser = await User.findOne({username})
     if(foundUser.password=password){
         req.session.user_id = foundUser._id;
+        req.session.username = foundUser.username;
         res.redirect('/buy')
 
     }
@@ -88,7 +122,7 @@ app.post("/register", (req, res) => {
       });
 })
 
-app.post('/logout',(req,res)=>{
+app.get('/logout',(req,res)=>{
     req.session.user_id=null;
     req.session.destroy();
     res.redirect('/login')
@@ -98,7 +132,7 @@ app.get('/buy',requireLogin,(req,res)=>{
     res.render('buy')
 })
 
-app.get('error',(req,res)=>{
+app.get('/error',(req,res)=>{
     res.render('error')
 })
 

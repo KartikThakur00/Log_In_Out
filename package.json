@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KartikThakur00/Log_In_Out#readme",
   "dependencies": {
+    "connect-mongo": "^3.2.0",
     "ejs-mate": "^4.0.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",

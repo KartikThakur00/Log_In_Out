@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;0,700;0,900;1,300;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css"   href="/css/style.css">
-    <title>Home</title>
+    <title>Carverse</title>
 </head>
 
 <body>
@@ -24,10 +24,14 @@
             <ul id="nav-links">
                 <a id="active" href="/"><li>Home</li></a>
                 <a href="/contact"><li>Contact Us</li></a>
+                <a href="/buy"><li>Buy</li></a>
+
+                <% if(!currentUser){ %> 
                 <a href="/login"><li>Login</li></a>
                 <a href="/register">Register</a>
-                <a href="/logout">Logout</a>
-
+                <% }else{ %> 
+                <a href="/logout">Logout <%= currentUser.username%></a>
+                <% } %> 
             </ul>
 
 
