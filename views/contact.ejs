@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;0,700;0,900;1,300;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"   href="/css/style.css">
     <title>Home</title>
 </head>
@@ -26,6 +27,8 @@
                 <a id="active" href="/contact"><li>Contact Us</li></a>
                 <a  href="/login"><li>Login</li></a>
                 <a href="/register">Register</a>
+                <a href="/logout">Logout</a>
+
             </ul>
 
 
@@ -33,13 +36,42 @@
 
     </header>
 
-
     <main id="main">
-<p>contact</p>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                        <h2 class="text-uppercase section-heading">Contact Us
+                        </h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contactForm" class="needs-validation" name="contactForm" method="post" action="https://formsubmit.co/kartikthakur029+xenon@gmail.com">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3"><input class="form-control aos-init aos-animate" type="text" data-aos="zoom-in" id="name" name="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <input type="hidden" name="_subject" value="New email! woooh...">
+                                    <div class="form-group mb-3"><input class="form-control aos-init aos-animate" type="email" data-aos="zoom-in" id="email" name="email" placeholder="Your Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <div class="form-group mb-3"><input class="form-control aos-init aos-animate" type="tel" name="phoneNo" data-aos="zoom-in" placeholder="Your Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3"><textarea class="form-control aos-init aos-animate" data-aos="zoom-in" name="message" id="message" placeholder="Your Message *" required="" style="height: 150px;"></textarea><small class="form-text text-danger help-block lead"></small></div>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col-lg-12 text-center">
+                                    <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit" value="Send Message" >Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
 
- 
+   
 
 
 </body>
