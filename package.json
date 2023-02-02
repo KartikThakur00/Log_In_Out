@@ -1,0 +1,30 @@
+{
+  "name": "log_in_out",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KartikThakur00/Log_In_Out.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KartikThakur00/Log_In_Out/issues"
+  },
+  "homepage": "https://github.com/KartikThakur00/Log_In_Out#readme",
+  "dependencies": {
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^5.0.0",
+    "mongoose": "^6.9.0",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
