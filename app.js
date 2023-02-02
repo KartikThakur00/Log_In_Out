@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 
 const secret = process.env.SECRET || 'thisshouldbebettersecret!';
 const store = new MongoDBStore({
-    url:dbUrl,
+    url:dbUrl, 
     secret,
     touchAfter:24*60*60
 })
@@ -79,7 +79,7 @@ app.get('/', (req, res) => {
 })
 
 app.get("/login", (req, res) => {
-    res.render('login')
+    res.render('login',)
 })
 
 
@@ -111,9 +111,13 @@ app.post("/register", (req, res) => {
     const {username,password}=req.body;
     const user = new User({ username:username, password:password });
 
-        user.save((err, doc) => {
+        user.save(async(err, doc) => {
             if (!err){
-                req.session.user_id = user._id;
+                const foundUser = await User.findOne({username})
+                if(foundUser.password=password){
+                    req.session.user_id = foundUser._id;
+                    req.session.username = foundUser.username;
+                }
                 res.redirect('/');
             }
                

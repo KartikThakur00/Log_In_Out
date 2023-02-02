@@ -26,9 +26,12 @@
                 <a href="/contact"><li>Contact Us</li></a>
                 <a href="/buy"><li>Buy</li></a>
 
-                <a id="active" href="/login"><li>Login</li></a>
-                <a href="/register">Register</a>
-                <a href="/logout">Logout</a>
+                <% if(!currentUser){ %> 
+                    <a id="active" href="/login"><li>Login</li></a>
+                    <a href="/register">Register</a>
+                    <% }else{ %> 
+                    <a href="/logout">Logout</a>
+                    <% } %> 
 
             </ul>
 
