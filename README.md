@@ -1,26 +1,26 @@
 # Carverse
 ## home
 * It is the landing page of website
-![Alt text](public/images/home.png)
+![Home Page](public/images/home.png)
 ## contact us
 * by using this form you can connect to me
  * this is going to send a mail to my g-mail via external api service.
-![Alt text](public/images/contact.png)
+![Contact Us Page](public/images/contact.png)
 
 ## buy
  * this route is shows if you are loged in 
- ![Alt text](public/images/buy%20.png)
+ ![Buy Page Loged In](public/images/buy%20.png)
  * if not loged in then :
- ![Alt text](public/images/buy%20not.png)
+ ![Buy Page Loged Out](public/images/buy%20not.png)
  
 ## login
   * log into your previously registered account
-  ![Alt text](public/images/login.png)
+  ![Login Page](public/images/login.png)
 
 
 ## register
  * register your acoount 
-![Alt text](public/images/register.png)
+![Register page](public/images/register.png)
 
 ## logout
  * you are logged out and redirected to login page
