@@ -1,26 +1,29 @@
 # Carverse
 ## home
 * It is the landing page of website
-![Home Page](public/images/home.png)
+
+![home](https://user-images.githubusercontent.com/76154014/216528049-899c69bf-85bb-44e0-add8-0587f64d3d48.png)
+
 ## contact us
 * by using this form you can connect to me
  * this is going to send a mail to my g-mail via external api service.
-![Contact Us Page](public/images/contact.png)
+![contact](https://user-images.githubusercontent.com/76154014/216528301-657971fe-087a-4ae5-a0fa-a542ebadbf23.png)
 
 ## buy
  * this route is shows if you are loged in 
- ![Buy Page Loged In](public/images/buy%20.png)
+ ![buy ](https://user-images.githubusercontent.com/76154014/216528346-233341f9-e74a-43a1-b7a5-ed5b4c3043eb.png)
+
  * if not loged in then :
- ![Buy Page Loged Out](public/images/buy%20not.png)
- 
+  ![buy not](https://user-images.githubusercontent.com/76154014/216528384-8bd809cd-27cf-4b28-8bcc-114bbd302833.png)
+
 ## login
   * log into your previously registered account
-  ![Login Page](public/images/login.png)
+ ![login](https://user-images.githubusercontent.com/76154014/216528414-047e02b7-363e-4602-916a-650c3315b411.png)
 
 
 ## register
  * register your acoount 
-![Register page](public/images/register.png)
+ ![register](https://user-images.githubusercontent.com/76154014/216528512-14a06c88-23d1-46f6-9e6f-d9ec58aa5c88.png)
 
 ## logout
  * you are logged out and redirected to login page
